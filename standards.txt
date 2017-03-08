@@ -1,0 +1,22 @@
+Coding Standards for CS 232 Projects
+
+The following coding standards will be enforced for CS-232 Projects. Many of these rules may apply only to C/C++ code. Some rules can be applied to bash as well.
+
+Look and Feel
+
+* Code must be indented consistently and cleanly. Indentation must be 4 spaces (preferred) or 8 spaces.
+* Variable names must be meaningful. One letter variable names are acceptable for loop variables (e.g., i, n, etc.), but all other variable names should be meaningful.
+* Function/method definitions (in .cpp files) must have a documentation block above them that describe what the function/method does and if necessary, what the parameters mean, and what the function/method returns.
+* Function/method declarations and variable declarations (in .h files) should have a one-line comment above each to describe (very briefly) what the function/method does or what the variable represents.
+* CONSTANTS should be all upper-case. They may be defined within or outside of a class definition.
+* Class names must begin with an upper-case letter.
+* Function names and variable names must begin with a lower-case letter.
+* Line lengths should be less than 80 characters, if possible. If not possible/practical, they must be less than 120 characters. (not ironic at all...)
+* Any code whose purpose is not obvious to the casual reader should be commented.
+
+Code Organization
+
+* .h (or .H or .hpp) files must contain the class declarations and method/variable declarations. The file may also include code for 1-liner methods, like getters and setters. The file MUST NOT contain any other code.
+* Implementations for declared methods must be in .c / .cpp / .cc / .C files.
+* The program's entry point (main()) must be in a file called main.c/main.cpp/main.cc/main.C.
+* Each file that you submit must have your name, userid, and date in a comment at the top. For multi-person projects it should have all your names, userid, and the date.

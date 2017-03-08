@@ -1,0 +1,35 @@
+Theo Bigelow
+jgb23
+2/17/17
+
+Selected system calls from running strace on the prank program in this folder:
+
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+    Checks whether the program can access the file at filename.
+    Returns 0 for success, -1 for error.  When an error is encountered it is
+        recorded in errno.
+
+alarm(5)                                = 0
+    Used in the program, triggers an alarm after specified number of seconds
+        have elapsed.
+    Returns how many seconds until the next scheduled alarm, 0 since there were
+        none.
+
+close(3)                                = 0
+    Closes the file referred to by the signifier so it may be reused.
+    Returns 0 for success, -1 for error.  When an error is encountered it is 
+        recorded in errno.
+
+pause()                                 = ? ERESTARTNOHAND (To be restarted if
+    no handler)
+    Used in the program, pauses until a signal is intercepted.
+    Doesn't return (seen here) unless the signal is not caught or the 
+        signal-catching function did not return.
+
+write(1, "No, YOU'RE annoying\n", 20No, YOU'RE annoying)   = 20
+    Writes the buffer (the message) to file (1=console) up to the number of 
+        bytes in the last parameter.
+    The second "No, YOU'RE annoying" is the printout to console writing as the 
+        system call that prints it is recorded.
+    Returns the number of bytes written, -1 for error.  When an error is 
+        encountered it is recorded in errno.

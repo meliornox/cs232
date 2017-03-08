@@ -1,0 +1,10 @@
+dijkstra
+boole
+zuse
+wall
+taylor
+noyce-kilby
+hillis
+augusta
+church
+stallman

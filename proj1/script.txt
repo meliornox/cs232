@@ -1,0 +1,63 @@
+Theo Bigelow
+jgb23
+2/17/17
+
+Script started on Fri 17 Feb 2017 05:43:01 PM EST
+jgb23@leibniz:~/232/proj1$ gcc -o prank main.c prank.c
+jgb23@leibniz:~/232/proj1$ ./prank
+No, YOU'RE annoying
+^CNo, YOU'RE annoying
+^Z
+[1]+  Stopped                 ./prank
+jgb23@leibniz:~/232/proj1$ ps
+  PID TTY          TIME CMD
+14056 pts/2    00:00:00 bash
+14069 pts/2    00:00:00 prank
+14070 pts/2    00:00:00 ps
+jgb23@leibniz:~/232/proj1$ kill -9 14069
+jgb23@leibniz:~/232/proj1$ ./prank -i
+No, YOU'RE annoying
+^CNo, YOU'RE annoying
+^Z[1]   Killed                  ./prank
+
+[2]+  Stopped                 ./prank -i
+jgb23@leibniz:~/232/proj1$ ps
+  PID TTY          TIME CMD
+14056 pts/2    00:00:00 bash
+14074 pts/2    00:00:00 prank
+14075 pts/2    00:00:00 ps
+jgb23@leibniz:~/232/proj1$ kill -9 14074
+jgb23@leibniz:~/232/proj1$ ./prank -i +t 5
+No, YOU'RE annoying
+^CNo, YOU'RE annoying
+^Z[2]   Killed                  ./prank -i
+
+[3]+  Stopped                 ./prank -i +t 5
+jgb23@leibniz:~/232/proj1$ ps
+  PID TTY          TIME CMD
+14056 pts/2    00:00:00 bash
+14076 pts/2    00:00:00 prank
+14080 pts/2    00:00:00 ps
+jgb23@leibniz:~/232/proj1$ kill -9 14076
+jgb23@leibniz:~/232/proj1$ ./prank +t 5 -i
+No, YOU'RE annoying
+^CNo, YOU'RE annoying
+^Z[3]   Killed                  ./prank -i +t 5
+
+[4]+  Stopped                 ./prank +t 5 -i
+jgb23@leibniz:~/232/proj1$ ps
+  PID TTY          TIME CMD
+14056 pts/2    00:00:00 bash
+14082 pts/2    00:00:00 prank
+14086 pts/2    00:00:00 ps
+jgb23@leibniz:~/232/proj1$ kill -9 14082
+jgb23@leibniz:~/232/proj1$ ./prank +i +t 10
+No, YOU'RE annoying
+^C
+jgb23@leibniz:~/232/proj1$ ./prank +t 10 +i
+No, YOU'RE annoying
+^C
+jgb23@leibniz:~/232/proj1$ exit
+exit
+
+Script done on Fri 17 Feb 2017 05:48:08 PM EST
