@@ -58,9 +58,9 @@ CommandLine::CommandLine(istream& in){
     //     a fixed size to hold all the words, make another temporary string
     //     to hold each word, and initialize argc to count the words.
     vector<string> args;
-    string word;  
+    string word;
     argc = 0;
-    
+
     // Cycle through each word in the console input stream and push them 
     //     at the back into the temporary vector of strings, iterating argc
     //     to count each word.

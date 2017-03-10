@@ -40,7 +40,7 @@ void RTShell::run() {
         Prompt pr;
         string directory = pr.get();
 
-        cout << directory << "$" ;
+        cout << directory << "$ " ;
 
         CommandLine c(cin);
         Path p;
@@ -60,11 +60,13 @@ void RTShell::run() {
             //https://cs.calvin.edu/courses/cs/232/assignments/3/index.html
             //http://www.cprogramming.com/tutorial/lesson14.html
 
-	        if (!strcmp (command, "cd")){
+	        if (strcmp(command, "cd")){
                 if (c.getArgVector(1) == NULL){
                     chdir ("/");
                 } else {
-                    chdir (c.getArgVector(1));
+                    string s(c.getArgVector(1));
+                    s = s + "/" + directory;
+                    chdir (s);
                 }
                 perror (command);
             } else if (pid = fork() == -1){
