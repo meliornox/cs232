@@ -11,13 +11,19 @@
 #ifndef RTSHELL_H_
 #define RTSHELL_H_
 
-using namespace std;
 //Includes libraries
+#include <sstream>
+#include <stdio.h>
 #include <string>
 #include <iostream>
+#include <algorithm>
+#include <vector>
+#include <iterator>
+#include <cstring>
 
+//Define namespace
+using namespace std;
 
-//Declares our single function
 class CommandLine{
 public:
     CommandLine(std::istream&);
@@ -26,6 +32,10 @@ public:
     char** getArgVector() const;
     char* getArgVector(int) const;
     bool noAmpersand() const;
+	virtual ~CommandLine();
+private:
+    char ** argv;
+    int argc;
 };
 
 class Path{
