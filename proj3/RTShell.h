@@ -12,12 +12,15 @@
 #define RTSHELL_H_
 
 //Includes libraries
+#include <stdlib.h>
 #include <sstream>
+#include <unistd.h>
 #include <stdio.h>
 #include <string>
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <dirent.h>
 #include <iterator>
 #include <cstring>
 
@@ -38,17 +41,28 @@ private:
     int argc;
 };
 
-class Path{
+class Path {
 public:
     Path();
-    int find(const std::string&);
-    string getDirectory(int) const;
+    int find(const string& program) const;
+    string getDirectory(int i) const;
+    virtual ~Path();
+
+private:
+    vector<string> path;
+    unsigned size;
+
 };
 
-class Prompt{
+class Prompt {
 public:
     Prompt();
     string get() const;
+    ~Prompt();
+
+private:
+    string dirPrompt;
+    int buffSize;
 };
 
 class RTShell{

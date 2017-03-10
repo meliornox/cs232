@@ -6,6 +6,8 @@
 ** This is the .c file containing definitions implied as a requirement
 ** for compliance with the standards for cs 232 projects referred to in main.c
 **
+** Run using $g++ -o rtshell main.cpp RTShell.cpp Prompt.cpp Path.cpp CommandLine.cpp
+**
 ** References: http://www.cplusplus.com/forum/general/46540/
 **     http://www.linuxquestions.org/questions/programming-9/making-a-c-shell-775690/
 **     http://stackoverflow.com/questions/15006269/get-substring-before-a-certain-char-in-c
@@ -17,7 +19,6 @@
 
 //Includes header file
 #include "RTShell.h"
-using namespace std;
 
 // Global variables
 
@@ -26,7 +27,7 @@ using namespace std;
 **
 ** ~*#Input#*~ 
 **/
-RTShell(){
+RTShell::RTShell(){
 }
 
 /*
@@ -34,26 +35,22 @@ RTShell(){
 **
 ** ~*#Input#*~ 
 **/
-void run() {
+void RTShell::run() {
     while(true){
+        Prompt pr;
+        string directory = pr.get();
 
-        cout << get_current_dir_name () << "$ " ;
+        cout << directory << "$" ;
 
         CommandLine c(cin);
-        Path p();
-        Prompt pr();
-
-
-        char* wholeArray = c.getCommand();
-        //Maybe s instead of str
-        string wholeString str(wholeArray);
-        string::size_type pos = wholeString.strchr(' ');
-        string command = wholeString.substr(0, pos);
+        Path p;
+        
+        char* command = c.getCommand();
 
         if(strcmp(command, "exit") == 0){
             exit(0);
         } else {
-
+            int pid;
             ////////////////////////////////
             //http://www.linuxquestions.org/questions/programming-9/making-a-c-shell-775690/
             //http://users.cs.cf.ac.uk/Dave.Marshall/C/node20.html
@@ -63,22 +60,21 @@ void run() {
             //https://cs.calvin.edu/courses/cs/232/assignments/3/index.html
             //http://www.cprogramming.com/tutorial/lesson14.html
 
-	        if (!strcmp (prog, "cd"){
-                if (argv[1] == NULL){
+	        if (!strcmp (command, "cd")){
+                if (c.getArgVector(1) == NULL){
                     chdir ("/");
                 } else {
-                    chdir (argv[1]);
+                    chdir (c.getArgVector(1));
                 }
                 perror (command);
-            } else if ((pid = fork()) == -1){
+            } else if (pid = fork() == -1){
                 perror("Can't fork");
                 exit(-1);
             }
             // ---- by when you get here there will be two processes
             if (pid == 0) {
                 // child process
-                string path = p.getDirectory();
-                char *charPath = path.c_str();
+                char *charPath = directory.c_str();
                 execvp(charPath,c.getCommand());
             } else {
                 //parent process
