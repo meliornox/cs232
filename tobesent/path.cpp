@@ -17,6 +17,10 @@
          path.push_back( sPath );
          size = size + 1;
      }
+     charPath = getcwd(charPath, 200);
+     string currentDir(charPath);
+     path.push_back(currentDir);
+     size = size +1;
  }
 
 //Looks through the different PATH directories and retunrns the index in the
@@ -32,7 +36,7 @@ int Path::find(const string& program) const {
     for (int i = 0; i < size; i ++ )
     {
         sPath = path[i];
-
+        cout << sPath  << "\n";
         //Open said directories, and go through them comparing the names of the
         //files inside to program's name. If found, breaks.
         pathDir = opendir(sPath.c_str());

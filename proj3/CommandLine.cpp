@@ -1,4 +1,4 @@
-/* 
+/*
 ** Theodore Bigelow
 ** jgb23
 ** 03/07/17
@@ -10,7 +10,7 @@
 **
 */
 /*
-** Resources: 
+** Resources:
 **     http://www.cplusplus.com/reference/string/string/
 **     http://stackoverflow.com/questions/3300743/i-want-to-see-if-a-character-is-present-in-a-string
 **     http://stackoverflow.com/questions/17757617/returning-array-of-char-pointers-from-a-function-c
@@ -45,31 +45,37 @@
 **
 ** istream& in: A reference to an istream which allows us to read in commands.
 **/
-    
+
 CommandLine::CommandLine(istream& in){
     // Make a temporary string to get the line from the console and make an
-    //     istringstream, which allows the use of while() to cycle through 
+    //     istringstream, which allows the use of while() to cycle through
     //     the words in the console input.
     string lineIn;
     getline(in, lineIn);
     istringstream iss(lineIn);
 
-    // Make a vector of strings, which is kind of like an array but not 
+    // Make a vector of strings, which is kind of like an array but not
     //     a fixed size to hold all the words, make another temporary string
     //     to hold each word, and initialize argc to count the words.
     vector<string> args;
     string word;
-    argc = 0;
 
-    // Cycle through each word in the console input stream and push them 
+    argc = 0;
+    ampersand = false;
+
+    // Cycle through each word in the console input stream and push them
     //     at the back into the temporary vector of strings, iterating argc
     //     to count each word.
     while (iss >> word) {
-        args.push_back(word);
-        argc++;
+        if(word != "&"){
+            args.push_back(word);
+            argc++;
+        } else {
+            ampersand = true;
+        }
     }
 
-    // Initialize the "array" of "strings" (C++ does things 
+    // Initialize the "array" of "strings" (C++ does things
     //     a little differently than a lot of other languages with respect
     //     to strings)
     argv = new char*[args.size()];
@@ -91,7 +97,7 @@ char* CommandLine::getCommand() const{
 }
 
 /*
-** getArgCount() returns the number of command-line arguments on 
+** getArgCount() returns the number of command-line arguments on
 **     the command-line.
 **
 ** returns int, the number of arguments sumbitted.
@@ -113,7 +119,7 @@ char** CommandLine::getArgVector() const{
 /*
 ** getArgVector() returns a pointer to the ith command-line 'word'.
 **
-** int i: the position of the command-line word accessed. 
+** int i: the position of the command-line word accessed.
 ** returns char*, the ith C++ "string" in the console input.
 **/
 char* CommandLine::getArgVector(int i) const{
@@ -128,18 +134,19 @@ char* CommandLine::getArgVector(int i) const{
 **     contains '&'.
 **/
 bool CommandLine::noAmpersand() const{
-    // Make a char* for &
-    const char* ampersand = "&";
-    
-    // Cycle through each "string" in the console input and check if it's '&'
-    for(int i = 0; i < argc; i++) {
-        if (strcmp(argv[i],ampersand) == 0) {
-            // If so there is not no ampersand
-            return false;
-        }
-    }
-    // If not there is an ampersand.
-    return true;
+    return !ampersand;
+    // // Make a char* for &
+    // const char* ampersand = "&";
+    //
+    // // Cycle through each "string" in the console input and check if it's '&'
+    // for(int i = 0; i < argc; i++) {
+    //     if (strcmp(argv[i],ampersand) == 0) {
+    //         // If so there is not no ampersand
+    //         return false;
+    //     }
+    // }
+    // // If not there is an ampersand.
+    // return true;
 }
 
 /*

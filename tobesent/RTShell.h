@@ -23,8 +23,6 @@
 #include <dirent.h>
 #include <iterator>
 #include <cstring>
-#include <sys/types.h>
-#include <sys/wait.h>
 #include <libgen.h>
 
 //Define namespace
@@ -42,7 +40,6 @@ public:
 private:
     char ** argv;
     int argc;
-    bool ampersand;
 };
 
 class Path {
@@ -73,6 +70,7 @@ class RTShell{
 public:
     RTShell();
     void run();
+
 private:
     void movingDir( const char* argVector);
 };

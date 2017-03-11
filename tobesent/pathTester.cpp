@@ -15,8 +15,11 @@ int main() {
     cout << "testing find\n";
     int index = testPath.find("noFile");
     cout << "Index for noFile is " << index << "\n";
-    index = testPath.find("testPath");
+    index = testPath.find("cs232");
     cout << "testFind found at " << index << "\n";
+    index = testPath.find("testPrompt");
+    cout << "testFind found at " << index << "\n";
+
 
 
     cout << "testing getDirectory \n";
