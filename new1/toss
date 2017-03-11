@@ -1,0 +1,211 @@
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <sys/wait.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <stdbool.h>
+#include <sys/types.h>
+#include <signal.h>
+#include <errno.h>
+
+#define MAX_BUFFER 129                       // max line buffer
+#define MAX_ARGS 32                            // max # args
+#define SEPARATORS " \t\n"                     // token sparators
+char *args[MAX_ARGS];
+
+int print[16];
+int get[16];
+int fd[2];
+
+char histarr[10][129];  // History array
+char histel[129];
+
+void reshist(void)
+{
+  //HISTORY RESORTING
+
+  int counter = 0;
+  while (counter < 10)
+  {  //shifting all elements by one from the last element of the list
+    if (histarr[counter] == NULL )
+    {
+      strcpy(histarr[counter], histel); //first element of the history will contain the last command
+      break;
+    }
+    counter++;
+  }
+  if (counter == 10)
+  {
+    counter = 1;
+    while (counter < 10)
+    {
+      strcpy(histarr[counter - 1], histarr[counter]);
+      counter++;
+    }
+    strcpy(histarr[9], histel);
+  }
+
+  memset(histel, 0, 127);
+  //HISTORY RESORT ENDS
+}
+
+void setup(void)
+{
+
+  char buf[MAX_BUFFER];                      // line buffer
+  //char * args[MAX_ARGS];                     // pointers to arg strings
+  char ** arg;                               // working pointer thru args
+  char * prompt = "333.sh>";                    // shell prompt
+
+  /* keep reading input until "quit" command or eof of redirected input */
+
+  while (!feof(stdin))
+  {
+
+    /* get command line from input */
+    fputs(prompt, stdout);                // write prompt
+    if (fgets(buf, MAX_BUFFER, stdin))
+    { // read a line
+
+      /* tokenize the input into args array */
+
+      arg = args;
+      *arg++ = strtok(buf, SEPARATORS);   // tokenize input
+      while ((*arg++ = strtok(NULL, SEPARATORS)))
+        ;
+      // last entry will be NULL
+
+      strcpy(histel, buf);
+      reshist();
+
+      pid_t pid;
+      int print[16];
+      int get[16];
+      int fd[2];
+
+      int count = 0;
+      int i = 0;
+      while (args[i] != NULL )
+      {
+        if (0 == strcmp(args[i], "|"))
+        {
+          count++;
+        }
+        i++;
+      }
+
+      char *arrays[count + 1][i - count]; // array lines bordered as arrays[numberOfPipes+1][numberofArguments-numberOfPipes]
+
+      i = 0;
+      int x = 0;
+      int y = 0;
+      while (args[i] != NULL )
+      {
+        if (strcmp(args[i], "|") != 0)
+        {
+          arrays[x][y] = args[i]; //builting arrays that is going to be sent to the each process, each row of the matrix is an array to be sent to another process
+          y++;
+        }
+        else
+        {
+          x++;
+          y = 0;
+        }
+        i++;
+      }
+
+      int h = 0;
+      int a = 0;
+      int k = 0;
+      for (k = 0; k <= count; k++)
+      {
+
+        get[k] = -1;
+        print[k] = -1;
+      }
+      //create required number of pipes
+      for (a = 0; a < count; a++)
+      {
+        if (pipe(fd) == -1)
+        {
+          perror("Pipe failure");
+          continue;
+        }
+        get[a + 1] = fd[0];
+        print[a] = fd[1];
+      }
+
+      for (k = 0; k <= count; k++)
+      {
+
+        pid = fork();
+
+        if (pid < 0)
+        {
+          printf("fork failed\n");
+        }
+        else if (pid == 0)
+        {
+          if (print[k] != -1)
+          {
+
+            if (dup2(print[k], 1) == -1)
+            {
+              perror("dup2 error");
+              exit(1);
+            }
+          }
+
+          if (get[k] != -1)
+          {
+
+            if (dup2(get[k], 0) == -1)
+            {
+              perror("dup2read error");
+              exit(1);
+            }
+          }
+
+          for (h = 0; h <= count; h++)
+          {
+            close(print[h]);
+            close(get[h]);
+          }
+
+          if (execvp((const char*) arrays[k][0], arrays[k]) < 1)
+          {
+            perror("error");
+            exit(1);
+          }
+
+          exit(0);
+        }
+        else
+        {
+          int stat;
+          close(print[k]);
+          close(get[k]);
+          waitpid(pid, &stat, 0);
+
+        }
+
+      }
+
+    } // system command else ends
+
+  }
+}
+
+int main(void)
+{
+  setup();
+  /**
+   * After reading user input, the steps are:
+   * (1) fork a child process using fork()
+   * (2) the child process will invoke execvp()
+   * (3) if command included &, parent will invoke wait()
+   */
+  return 0;
+}
