@@ -17,6 +17,10 @@
          path.push_back( sPath );
          size = size + 1;
      }
+     charPath = getcwd(charPath, 200);
+     string currentDir(charPath);
+     path.push_back(currentDir);
+     size++;
  }
 
 //Looks through the different PATH directories and retunrns the index in the

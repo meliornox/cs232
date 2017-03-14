@@ -110,7 +110,8 @@ int CommandLine::getArgCount() const{
 ** getArgVector() returns a pointer to a char* array,
 **     each entry of which points to one 'word' of the command-line.
 **
-** returns char**, the "array" of "strings" that make up the user input on the command line.
+** returns char**, the "array" of "strings" that make up the user input
+**     on the command line.
 **/
 char** CommandLine::getArgVector() const{
     return argv;

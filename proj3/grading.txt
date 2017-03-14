@@ -1,0 +1,26 @@
+
+We the undersigned affirm that (i) the attached project is the work of ourselves 
+and no one else, and (ii) the "fair share percentage" accurately reflects 
+the percentage of a fair share that each person contributed to the project. 
+(If each person did their fair share, use 100%.) 
+
+
+NAME:  Theo Bigelow         FAIR SHARE PERCENTAGE (0 - 100):  100
+NAME:  Reuben Lewis         FAIR SHARE PERCENTAGE (0 - 100):  100
+
+
+
+Category                    Points Possible      Points Earned
+Works at all                30                   
+Satisfies Project Specs     80                   
+Style, Documentation        40                   
+Extra Credit                5                    
+
+Total                       150 (max 155 with extra credit)
+
+PERSON1 SCORE (Total * FSP): 
+PERSON2 SCORE (Total * FSP): 
+
+Grader comments: 
+
+
