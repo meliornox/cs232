@@ -1,0 +1,318 @@
+Script started on Mon 13 Mar 2017 03:57:44 PM EDT
+jgb23@dijkstra:~/232/cs232/new1$ g++ CommandLine.cpp Path.cpp Prompt.cpp RTShell 
+.cpp main.cpp -o rtshell
+jgb23@dijkstra:~/232/cs232/new1$ ./rtshell
+/home/jgb23/232/cs232/new1$ ls
+CommandLine.cpp  RTShell.h		hello		script.txt
+Path.cpp	 Separate Header Files	helloworld.cpp	toss
+Prompt.cpp	 Tester Files		main.cpp
+RTShell.cpp	 a.out			rtshell
+/home/jgb23/232/cs232/new1$ cd ..
+/home/jgb23/232/cs232$ pwd
+/home/jgb23/232/cs232
+/home/jgb23/232/cs232$ ls -a
+.  ..  .git  README.md	new1  proj1  proj2  proj3  standards.txt  tobesent
+/home/jgb23/232/cs232$ ls -l /home/cs/
+total 40
+drwxrwsr-x 9 admin facstf 4096 Jan 23 14:14 106
+drwxrwsr-x 6 admin facstf 4096 Feb  2 08:38 108
+drwxrwsr-x 7 admin facstf 4096 Jan 23 16:40 112
+drwxrwsr-x 4 admin facstf 4096 Jan 23 14:15 212
+drwxrwsr-x 4 admin facstf 4096 Sep  1  2015 214
+drwxrwsr-x 6 admin facstf 4096 Feb  2 09:48 232
+drwxrwsr-x 3 admin facstf 4096 Jan 23 14:15 262
+drwxrwsr-x 4 admin facstf 4096 Aug 31  2016 332
+drwxrwsr-x 3 admin facstf 4096 Jan 23 14:16 336
+drwxrwsr-x 4 admin facstf 4096 Aug 31  2016 374
+/home/jgb23/232/cs232$ pwd
+/home/jgb23/232/cs232
+/home/jgb23/232/cs232$ ps -ax &
+/home/jgb23/232/cs232$   PID TTY      STAT   TIME COMMAND
+    1 ?        Ss     0:01 /sbin/init nomdmonddf nomdmonisw
+    2 ?        S      0:00 [kthreadd]
+    3 ?        S      0:00 [ksoftirqd/0]
+    5 ?        S<     0:00 [kworker/0:0H]
+    7 ?        S      0:05 [rcu_sched]
+    8 ?        S      0:00 [rcu_bh]
+    9 ?        S      0:00 [migration/0]
+   10 ?        S      0:00 [watchdog/0]
+   11 ?        S      0:00 [watchdog/1]
+   12 ?        S      0:00 [migration/1]
+   13 ?        S      0:00 [ksoftirqd/1]
+   15 ?        S<     0:00 [kworker/1:0H]
+   16 ?        S      0:00 [watchdog/2]
+   17 ?        S      0:00 [migration/2]
+   18 ?        S      0:00 [ksoftirqd/2]
+   21 ?        S      0:00 [watchdog/3]
+   22 ?        S      0:00 [migration/3]
+   23 ?        S      0:00 [ksoftirqd/3]
+   25 ?        S<     0:00 [kworker/3:0H]
+   26 ?        S      0:00 [watchdog/4]
+   27 ?        S      0:00 [migration/4]
+   28 ?        S      0:00 [ksoftirqd/4]
+   30 ?        S<     0:00 [kworker/4:0H]
+   31 ?        S      0:00 [watchdog/5]
+   32 ?        S      0:00 [migration/5]
+   33 ?        S      0:00 [ksoftirqd/5]
+   35 ?        S<     0:00 [kworker/5:0H]
+   36 ?        S      0:00 [watchdog/6]
+   37 ?        S      0:00 [migration/6]
+   38 ?        S      0:00 [ksoftirqd/6]
+   40 ?        S<     0:00 [kworker/6:0H]
+   41 ?        S      0:00 [watchdog/7]
+   42 ?        S      0:00 [migration/7]
+   43 ?        S      0:00 [ksoftirqd/7]
+   45 ?        S<     0:00 [kworker/7:0H]
+   46 ?        S      0:00 [kdevtmpfs]
+   47 ?        S<     0:00 [netns]
+   48 ?        S<     0:00 [perf]
+   49 ?        S      0:00 [khungtaskd]
+   50 ?        S<     0:00 [writeback]
+   51 ?        SN     0:00 [ksmd]
+   52 ?        SN     0:00 [khugepaged]
+   53 ?        S<     0:00 [crypto]
+   54 ?        S<     0:00 [kintegrityd]
+   55 ?        S<     0:00 [bioset]
+   56 ?        S<     0:00 [kblockd]
+   57 ?        S<     0:00 [ata_sff]
+   58 ?        S<     0:00 [md]
+   59 ?        S<     0:00 [devfreq_wq]
+   63 ?        S      0:00 [kswapd0]
+   64 ?        S<     0:00 [vmstat]
+   65 ?        S      0:00 [fsnotify_mark]
+   66 ?        S      0:00 [ecryptfs-kthrea]
+   82 ?        S<     0:00 [kthrotld]
+   83 ?        S<     0:00 [acpi_thermal_pm]
+   84 ?        S<     0:00 [bioset]
+   85 ?        S<     0:00 [bioset]
+   86 ?        S<     0:00 [bioset]
+   87 ?        S<     0:00 [bioset]
+   88 ?        S<     0:00 [bioset]
+   89 ?        S<     0:00 [bioset]
+   90 ?        S<     0:00 [bioset]
+   91 ?        S<     0:00 [bioset]
+   92 ?        S<     0:00 [bioset]
+   93 ?        S<     0:00 [bioset]
+   94 ?        S<     0:00 [bioset]
+   95 ?        S<     0:00 [bioset]
+   96 ?        S<     0:00 [bioset]
+   97 ?        S<     0:00 [bioset]
+   98 ?        S<     0:00 [bioset]
+   99 ?        S<     0:00 [bioset]
+  100 ?        S<     0:00 [bioset]
+  101 ?        S<     0:00 [bioset]
+  102 ?        S<     0:00 [bioset]
+  103 ?        S<     0:00 [bioset]
+  104 ?        S<     0:00 [bioset]
+  105 ?        S<     0:00 [bioset]
+  106 ?        S<     0:00 [bioset]
+  107 ?        S<     0:00 [bioset]
+  112 ?        S<     0:00 [ipv6_addrconf]
+  126 ?        S<     0:00 [deferwq]
+  127 ?        S<     0:00 [charger_manager]
+  177 ?        S      0:00 [scsi_eh_0]
+  178 ?        S<     0:00 [scsi_tmf_0]
+  179 ?        S      0:00 [scsi_eh_1]
+  180 ?        S<     0:00 [scsi_tmf_1]
+  181 ?        S      0:00 [scsi_eh_2]
+  182 ?        S<     0:00 [scsi_tmf_2]
+  183 ?        S      0:00 [scsi_eh_3]
+  184 ?        S<     0:00 [scsi_tmf_3]
+  185 ?        S<     0:00 [kpsmoused]
+  186 ?        S      0:00 [scsi_eh_4]
+  187 ?        S<     0:00 [scsi_tmf_4]
+  188 ?        S      0:00 [scsi_eh_5]
+  189 ?        S<     0:00 [scsi_tmf_5]
+  203 ?        S<     0:00 [bioset]
+  231 ?        S      0:00 [jbd2/sda5-8]
+  232 ?        S<     0:00 [ext4-rsv-conver]
+  271 ?        Ss     0:00 /lib/systemd/systemd-journald
+  284 ?        S      0:00 [kauditd]
+  303 ?        S<     0:00 [rpciod]
+  343 ?        Ss     0:00 /lib/systemd/systemd-udevd
+  548 ?        S      0:00 [irq/29-mei_me]
+  582 ?        Ss     0:00 /usr/sbin/rpc.gssd
+  634 ?        S<     0:00 [kvm-irqfd-clean]
+  757 ?        S      0:00 [UVM global queu]
+  758 ?        S      0:00 [UVM Tools Event]
+  926 ?        Ss     0:00 /usr/sbin/atd -f
+  933 ?        Ss     0:01 /usr/sbin/acpid
+  950 ?        Ss     0:01 /usr/bin/dbus-daemon --system --address=systemd: --no
+  974 ?        S<     0:00 [kworker/3:1H]
+  991 ?        S<     0:00 [iprt-VBoxWQueue]
+  992 ?        S      0:00 [iprt-VBoxTscThr]
+  995 ?        Ssl    0:00 /usr/sbin/NetworkManager --no-daemon
+ 1001 ?        Ss     0:00 avahi-daemon: running [dijkstra.local]
+ 1003 ?        Ssl    0:00 /usr/sbin/rsyslogd -n
+ 1009 ?        Ssl    0:00 /usr/bin/whoopsie -f
+ 1011 ?        Ss     0:00 /usr/sbin/cron -f
+ 1013 ?        Ssl    0:00 /usr/lib/snapd/snapd
+ 1017 ?        S      0:00 avahi-daemon: chroot helper
+ 1069 ?        Ss     0:03 /usr/sbin/sssd -D -f
+ 1070 ?        S      0:03 /usr/lib/x86_64-linux-gnu/sssd/sssd_be --domain cs.ca
+ 1074 ?        S      0:01 /usr/lib/x86_64-linux-gnu/sssd/sssd_nss --uid 0 --gid
+ 1075 ?        S      0:00 /usr/lib/x86_64-linux-gnu/sssd/sssd_sudo --uid 0 --gi
+ 1076 ?        S      0:00 /usr/lib/x86_64-linux-gnu/sssd/sssd_pam --uid 0 --gid
+ 1077 ?        S      0:00 /usr/lib/x86_64-linux-gnu/sssd/sssd_ssh --uid 0 --gid
+ 1078 ?        S      0:00 /usr/lib/x86_64-linux-gnu/sssd/sssd_pac --uid 0 --gid
+ 1090 ?        Ssl    0:00 /usr/lib/colord/colord
+ 1114 ?        Ssl    0:01 /usr/lib/accountsservice/accounts-daemon
+ 1116 ?        Ss     0:00 /lib/systemd/systemd-logind
+ 1159 ?        Ssl    0:00 /usr/lib/policykit-1/polkitd --no-debug
+ 1405 ?        Ss     0:00 /sbin/dhclient -1 -v -pf /run/dhclient.enp0s25.pid -l
+ 1555 ?        Ss     0:00 /usr/games/bzfs -advertise NONE
+ 1559 ?        Ss     0:00 /usr/sbin/certmonger -S -p /var/run/certmonger.pid -n
+ 1563 ?        Ssl    1:08 /usr/bin/mongod --config /etc/mongod.conf
+ 1566 ?        Ss     0:00 /usr/sbin/sshd -D
+ 1568 ?        Ss     0:00 /usr/sbin/oddjobd -n -p /var/run/oddjobd.pid -t 300
+ 1595 ?        S<     0:00 [nfsiod]
+ 1648 ?        S      0:00 [nfsv4.0-svc]
+ 1771 ?        SNsl   0:00 /usr/bin/distccd --pid-file=/var/run/distccd.pid --lo
+ 1784 ?        SN     0:00 /usr/bin/distccd --pid-file=/var/run/distccd.pid --lo
+ 1800 ?        Ss     0:00 /usr/sbin/irqbalance --pid=/var/run/irqbalance.pid
+ 1801 ?        SLsl   0:00 /usr/sbin/lightdm
+ 1971 ?        Ss     0:00 /usr/lib/postfix/sbin/master
+ 1981 ?        Ssl    0:00 /usr/bin/ruby /usr/bin/puppet agent
+ 1992 tty1     Ss+    0:00 /sbin/agetty --noclear tty1 linux
+ 2016 ?        SN     0:00 /usr/bin/distccd --pid-file=/var/run/distccd.pid --lo
+ 2117 ?        SNsl   0:00 /usr/lib/rtkit/rtkit-daemon
+ 2190 ?        SN     0:00 /usr/bin/distccd --pid-file=/var/run/distccd.pid --lo
+ 2338 ?        SN     0:00 /usr/bin/distccd --pid-file=/var/run/distccd.pid --lo
+ 2436 ?        SN     0:00 /usr/bin/distccd --pid-file=/var/run/distccd.pid --lo
+ 2569 ?        SN     0:00 /usr/bin/distccd --pid-file=/var/run/distccd.pid --lo
+ 2603 ?        SN     0:00 /usr/bin/distccd --pid-file=/var/run/distccd.pid --lo
+ 2628 ?        SN     0:00 /usr/bin/distccd --pid-file=/var/run/distccd.pid --lo
+ 2629 ?        SN     0:00 /usr/bin/distccd --pid-file=/var/run/distccd.pid --lo
+ 2650 ?        SN     0:00 /usr/bin/distccd --pid-file=/var/run/distccd.pid --lo
+ 3737 ?        Ssl    0:00 /usr/lib/upower/upowerd
+ 3832 ?        Ssl    0:01 /usr/lib/udisks2/udisksd --no-debug
+ 5082 ?        S<     0:00 [kworker/1:2H]
+ 5426 ?        S      0:00 [kworker/5:0]
+ 5457 ?        Ssl    0:00 /usr/sbin/cups-browsed
+ 7355 ?        S      0:00 qmgr -l -t unix -u
+11633 ?        S<     0:00 [kworker/0:2H]
+13111 ?        S      0:00 [kworker/4:2]
+13113 ?        S<     0:01 [kworker/7:1H]
+13115 ?        S      0:00 [kworker/6:0]
+13151 ?        S<     0:00 [kworker/4:2H]
+13326 ?        S      0:00 [kworker/4:0]
+13376 tty7     Ss+    1:50 /usr/lib/xorg/Xorg -core :0 -seat seat0 -auth /var/ru
+13382 ?        Ss     0:00 /usr/bin/nvidia-persistenced --user nvidia-persistenc
+13767 ?        S<     0:00 [kworker/6:2H]
+14745 ?        Sl     0:00 lightdm --session-child 13 22
+14754 ?        Ss     0:00 /lib/systemd/systemd --user
+14756 ?        S      0:00 (sd-pam)
+14761 ?        Sl     0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+14763 ?        Ss     0:00 /sbin/upstart --user
+14829 ?        S      0:00 upstart-udev-bridge --daemon --user
+14832 ?        Ss     0:00 dbus-daemon --fork --session --address=unix:abstract=
+14888 ?        Ss     0:00 gpg-agent --homedir /home/jgb23/.gnupg --use-standard
+14891 ?        S      0:00 upstart-file-bridge --daemon --user
+14893 ?        S      0:00 upstart-dbus-bridge --daemon --system --user --bus-na
+14895 ?        S      0:00 upstart-dbus-bridge --daemon --session --user --bus-n
+14904 ?        Ss     0:00 /bin/sh /etc/xdg/xfce4/xinitrc -- /etc/X11/xinit/xser
+14915 ?        Sl     0:00 xfce4-session
+14919 ?        S      0:00 /usr/lib/x86_64-linux-gnu/xfce4/xfconf/xfconfd
+14925 ?        S      0:11 xfwm4 --replace
+14929 ?        Sl     0:02 xfce4-panel
+14931 ?        Sl     0:04 Thunar --daemon
+14933 ?        Sl     0:01 xfdesktop
+14934 ?        Ssl    0:00 xfsettingsd
+14937 ?        Sl     0:00 update-notifier
+14939 ?        Sl     0:00 /usr/bin/python3 /usr/bin/blueman-applet
+14940 ?        Sl     0:00 /usr/lib/policykit-1-gnome/polkit-gnome-authenticatio
+14941 ?        S      0:01 xscreensaver -no-splash
+14943 ?        Sl     0:00 light-locker
+14947 ?        Ssl    0:00 xfce4-power-manager
+14948 ?        Sl     0:00 nm-applet
+14949 ?        Sl     0:00 /usr/bin/python3 /usr/share/system-config-printer/app
+14953 ?        Ssl    0:00 xfce4-volumed
+14958 ?        Sl     0:00 /usr/lib/dconf/dconf-service
+14971 ?        S<l    1:32 /usr/bin/pulseaudio --start --log-target=syslog
+14977 ?        Sl     0:00 /usr/lib/gvfs/gvfsd
+14982 ?        Sl     0:00 /usr/lib/gvfs/gvfsd-fuse /run/user/50239/gvfs -f -o b
+15007 ?        Sl     0:00 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-1.0 /us
+15011 ?        S      0:00 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-1.0 /us
+15012 ?        Sl     0:00 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /us
+15022 ?        S      0:00 upstart --user --startup-event indicator-services-sta
+15025 ?        Ssl    0:00 /usr/lib/x86_64-linux-gnu/indicator-messages/indicato
+15026 ?        Ssl    0:00 /usr/lib/x86_64-linux-gnu/indicator-bluetooth/indicat
+15027 ?        Ssl    0:00 /usr/lib/x86_64-linux-gnu/indicator-power/indicator-p
+15028 ?        Ssl    0:00 /usr/lib/x86_64-linux-gnu/indicator-datetime/indicato
+15029 ?        Ssl    0:00 /usr/lib/x86_64-linux-gnu/indicator-keyboard/indicato
+15030 ?        Ssl    0:00 /usr/lib/x86_64-linux-gnu/indicator-sound/indicator-s
+15031 ?        Ssl    0:00 /usr/lib/x86_64-linux-gnu/indicator-session/indicator
+15058 ?        Ssl    0:00 /usr/lib/x86_64-linux-gnu/indicator-application/indic
+15077 ?        Sl     0:00 /usr/lib/evolution/evolution-source-registry
+15086 ?        Sl     0:00 /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+15101 ?        Sl     0:00 /usr/lib/gvfs/gvfs-mtp-volume-monitor
+15110 ?        Sl     0:00 /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+15115 ?        Sl     0:00 /usr/lib/gvfs/gvfs-afc-volume-monitor
+15121 ?        Sl     0:00 /usr/lib/gvfs/gvfs-goa-volume-monitor
+15131 ?        Sl     0:00 /usr/lib/gvfs/gvfsd-trash --spawner :1.21 /org/gtk/gv
+15138 ?        Sl     0:00 /usr/lib/evolution/evolution-calendar-factory
+15145 ?        Sl     0:00 /usr/lib/evolution/evolution-calendar-factory-subproc
+15155 ?        Sl     0:00 /usr/lib/evolution/evolution-addressbook-factory
+15157 ?        Sl     0:00 /usr/lib/evolution/evolution-calendar-factory-subproc
+15164 ?        Sl     0:00 /usr/lib/evolution/evolution-addressbook-factory-subp
+15202 ?        Sl     0:00 /usr/lib/gvfs/gvfsd-metadata
+15231 ?        S      0:00 /usr/lib/bluetooth/obexd
+15238 ?        Sl     0:01 /usr/bin/xfce4-terminal
+15242 ?        S      0:00 gnome-pty-helper
+15243 pts/11   Ss     0:00 bash
+15275 ?        SLl    2:13 /opt/google/chrome/chrome
+15280 ?        S      0:00 cat
+15281 ?        S      0:00 cat
+15284 ?        S      0:00 /opt/google/chrome/chrome --type=zygote --enable-cras
+15285 ?        S      0:00 /opt/google/chrome/nacl_helper
+15288 ?        S      0:00 /opt/google/chrome/chrome --type=zygote --enable-cras
+15327 ?        Sl     3:43 /opt/google/chrome/chrome --type=gpu-process --field-
+15331 ?        S      0:00 /usr/lib/x86_64-linux-gnu/gconf/gconfd-2
+15333 ?        Sl     0:32 /opt/google/chrome/chrome --type=renderer --field-tri
+15336 ?        S      0:00 /opt/google/chrome/chrome --type=gpu-broker
+15342 ?        Sl     0:14 /opt/google/chrome/chrome --type=renderer --field-tri
+15351 ?        Sl     0:03 /opt/google/chrome/chrome --type=renderer --field-tri
+15446 ?        S<     0:00 [kworker/2:1H]
+15452 ?        Sl    12:36 /opt/google/chrome/chrome --type=renderer --field-tri
+15480 ?        S<     0:00 [kworker/5:1H]
+15582 ?        Sl     0:53 /opt/google/chrome/chrome --type=renderer --field-tri
+15729 ?        S      0:00 [kworker/2:0]
+17019 ?        Sl     0:01 /opt/google/chrome/chrome --type=renderer --field-tri
+18654 ?        S      0:00 [kworker/7:1]
+18914 ?        S      0:00 [kworker/0:2]
+20385 ?        S      0:00 [kworker/0:0]
+20990 ?        S      0:00 [kworker/u16:1]
+22395 ?        S      0:00 [kworker/6:2]
+22962 ?        S      0:00 [kworker/3:1]
+23446 ?        S      0:00 [kworker/1:1]
+23500 ?        S      0:00 pickup -l -t unix -u -c
+23557 ?        S      0:00 [kworker/1:0]
+23691 ?        S      0:00 [kworker/u16:0]
+23701 ?        S      0:00 [kworker/5:2]
+23702 ?        S      0:00 [kworker/2:2]
+23706 ?        S      0:00 [kworker/3:2]
+23726 ?        Sl     0:02 /opt/google/chrome/chrome --type=renderer --field-tri
+23764 ?        S<     0:00 [kworker/2:2H]
+23803 ?        S      0:00 [kworker/7:0]
+23918 ?        Sl     0:00 /opt/google/chrome/chrome --type=renderer --field-tri
+23932 ?        S      0:00 [kworker/u16:2]
+23935 ?        S      0:00 [kworker/1:2]
+23937 ?        SNl    0:00 /usr/lib/x86_64-linux-gnu/tumbler-1/tumblerd
+23978 pts/11   S+     0:00 script script.txt
+23979 pts/2    Ss     0:00 bash -i
+23998 pts/2    S+     0:00 ./rtshell
+24004 pts/2    R+     0:00 ps -ax
+cd new1
+/home/jgb23/232/cs232/new1$ hello
+Hello wonderful world!
+/home/jgb23/232/cs232/new1$ cd
+/home/jgb23$ exit
+jgb23@dijkstra:~/232/cs232/new1$ ./rtshell
+/home/jgb23/232/cs232/new1$ agjdkrgreg
+Command not found
+/home/jgb23/232/cs232/new1$ cd grnwhts
+Directory not found!
+/home/jgb23/232/cs232/new1$ ^C
+jgb23@dijkstra:~/232/cs232/new1$ exit
+
+Script done on Mon 13 Mar 2017 03:59:52 PM EDT

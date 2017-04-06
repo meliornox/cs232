@@ -1,8 +1,9 @@
-//Class Prompt, written by Reuben Lewis, for CS232 Proj3
+//Class Prompt, written by Reuben Lewis for CS232 Proj3
 
 #include "RTShell.h"
 
-//Constructor that creates a string variable that contains the users current path
+//Constructor that creates a string variable that contains the users current
+//path
 Prompt::Prompt() {
     buffSize = 200; //200 should hopefully be enough, even for super long paths
     char* cPrompt;

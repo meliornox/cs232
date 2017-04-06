@@ -1,0 +1,2 @@
+1. My program does not run the same way each time; it relies on threads that execute in different orders every time.  With semaphores we control some of the sequences of events, but not all.
+2. No, the customer is hardly ever the first into the shop.

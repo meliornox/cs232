@@ -71,10 +71,12 @@ private:
 
 class RTShell{
 public:
-    RTShell();
+    RTShell() {};
     void run();
 private:
     void movingDir( const char* argVector);
+    Prompt pr;
+    Path p;
 };
 //RTSHELL_H
 #endif

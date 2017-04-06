@@ -1,0 +1,152 @@
+Script started on Wed 05 Apr 2017 10:33:01 PM EDT
+jgb23@dijkstra:~/232/cs232/proj4$ gcc bakeshop.c -o bakeshop -lpthread
+jgb23@dijkstra:~/232/cs232/proj4$ ./bakeshop
+The bakery is starting up
+Baker: Completed a loaf of bread that is available for sale
+Customer: #0 entered the store
+Customer: #4 entered the store
+Customer: #4 obtained a loaf of bread
+Customer: #2 entered the store
+Customer: #3 entered the store
+Customer: #1 entered the store
+Baker: Completed a loaf of bread that is available for sale
+Customer: #4 has paid
+Register: printed a receipt
+Customer: #2 obtained a loaf of bread
+Customer: #4 has gotten a receipt
+Customer: #4 has left the store
+Customer: #2 has paid
+Register: printed a receipt
+Customer: #5 entered the store
+Customer: #2 has gotten a receipt
+Customer: #2 has left the store
+Baker: Completed a loaf of bread that is available for sale
+Customer: #6 entered the store
+Customer: #0 obtained a loaf of bread
+Baker: Completed a loaf of bread that is available for sale
+Customer: #0 has paid
+Register: printed a receipt
+Customer: #3 obtained a loaf of bread
+Customer: #0 has gotten a receipt
+Customer: #0 has left the store
+Baker: Completed a loaf of bread that is available for sale
+Customer: #7 entered the store
+Customer: #3 has paid
+Register: printed a receipt
+Customer: #1 obtained a loaf of bread
+Customer: #3 has gotten a receipt
+Customer: #3 has left the store
+Baker: Completed a loaf of bread that is available for sale
+Customer: #8 entered the store
+Customer: #1 has paid
+Register: printed a receipt
+Customer: #5 obtained a loaf of bread
+Customer: #1 has gotten a receipt
+Customer: #1 has left the store
+Baker: Completed a loaf of bread that is available for sale
+Customer: #9 entered the store
+Customer: #5 has paid
+Register: printed a receipt
+Customer: #6 obtained a loaf of bread
+Baker: Completed a loaf of bread that is available for sale
+Customer: #5 has gotten a receipt
+Customer: #9 obtained a loaf of bread
+Customer: #6 has paid
+Register: printed a receipt
+Customer: #5 has left the store
+Customer: #6 has gotten a receipt
+Customer: #6 has left the store
+Baker: Completed a loaf of bread that is available for sale
+Customer: #9 has paid
+Register: printed a receipt
+Customer: #8 obtained a loaf of bread
+Customer: #9 has gotten a receipt
+Customer: #9 has left the store
+Baker: Completed a loaf of bread that is available for sale
+Customer: #7 obtained a loaf of bread
+Customer: #8 has paid
+Register: printed a receipt
+All the baking is done
+Customer: #8 has gotten a receipt
+Customer: #8 has left the store
+Customer: #7 has paid
+Register: printed a receipt
+Customer: #7 has gotten a receipt
+Customer: #7 has left the store
+jgb23@dijkstra:~/232/cs232/proj4$ ./bakeshop
+The bakery is starting up
+Baker: Completed a loaf of bread that is available for sale
+Customer: #4 entered the store
+Customer: #8 entered the store
+Customer: #7 entered the store
+Customer: #2 entered the store
+Customer: #0 entered the store
+Customer: #4 obtained a loaf of bread
+Baker: Completed a loaf of bread that is available for sale
+Customer: #8 obtained a loaf of bread
+Customer: #4 has paid
+Register: printed a receipt
+Customer: #4 has gotten a receipt
+Customer: #4 has left the store
+Baker: Completed a loaf of bread that is available for sale
+Customer: #8 has paid
+Register: printed a receipt
+Customer: #5 entered the store
+Customer: #7 obtained a loaf of bread
+Customer: #8 has gotten a receipt
+Customer: #8 has left the store
+Baker: Completed a loaf of bread that is available for sale
+Customer: #1 entered the store
+Customer: #7 has paid
+Register: printed a receipt
+Customer: #2 obtained a loaf of bread
+Customer: #7 has gotten a receipt
+Customer: #7 has left the store
+Baker: Completed a loaf of bread that is available for sale
+Customer: #2 has paid
+Register: printed a receipt
+Customer: #3 entered the store
+Customer: #0 obtained a loaf of bread
+Customer: #2 has gotten a receipt
+Customer: #2 has left the store
+Baker: Completed a loaf of bread that is available for sale
+Customer: #6 entered the store
+Customer: #0 has paid
+Register: printed a receipt
+Customer: #5 obtained a loaf of bread
+Customer: #0 has gotten a receipt
+Customer: #0 has left the store
+Baker: Completed a loaf of bread that is available for sale
+Customer: #9 entered the store
+Customer: #5 has paid
+Register: printed a receipt
+Customer: #1 obtained a loaf of bread
+Baker: Completed a loaf of bread that is available for sale
+Customer: #5 has gotten a receipt
+Customer: #5 has left the store
+Customer: #1 has paid
+Register: printed a receipt
+Customer: #3 obtained a loaf of bread
+Customer: #1 has gotten a receipt
+Customer: #1 has left the store
+Customer: #6 obtained a loaf of bread
+Customer: #3 has paid
+Baker: Completed a loaf of bread that is available for sale
+Register: printed a receipt
+Customer: #3 has gotten a receipt
+Baker: Completed a loaf of bread that is available for sale
+Customer: #6 has paid
+Register: printed a receipt
+Customer: #3 has left the store
+Customer: #9 obtained a loaf of bread
+Customer: #6 has gotten a receipt
+Customer: #6 has left the store
+All the baking is done
+Customer: #9 has paid
+Register: printed a receipt
+Customer: #9 has gotten a receipt
+Customer: #9 has left the store
+jgb23@dijkstra:~/232/cs232/proj4$ exit
+exit
+
+Script done on Wed 05 Apr 2017 10:34:12 PM EDT
