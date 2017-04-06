@@ -8,7 +8,10 @@
 **
 ** Run using $g++ -o rtshell main.cpp RTShell.cpp Prompt.cpp Path.cpp
 **     CommandLine.cpp
+<<<<<<< HEAD
 **     $./rtshell
+=======
+>>>>>>> 647a9a2e154c01f5945b46ce6df9a1e692f37f8c
 **
 ** References: http://www.cplusplus.com/forum/general/46540/
 **     http://www.linuxquestions.org/questions/programming-9/making-a-c-shell-775690/

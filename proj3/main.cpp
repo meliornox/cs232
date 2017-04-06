@@ -10,6 +10,13 @@
 ** This file is in accordance with the coding standards
 **     for CS 232 projects found at
 **     https://cs.calvin.edu/courses/cs/232/policies/coding.html
+<<<<<<< HEAD
+=======
+**
+** ~*#Special instructions#*~
+**
+**
+>>>>>>> 647a9a2e154c01f5945b46ce6df9a1e692f37f8c
 */
 
 //Include header file
